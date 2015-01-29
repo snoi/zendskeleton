@@ -4,6 +4,8 @@ return array(
     'modules' => array(
         'Application',
         'Album',
+        'SanAuth',
+        'Users'
     ),
 
     // These are various options for the listeners attached to the ModuleManager
@@ -27,7 +29,7 @@ return array(
         // Whether or not to enable a configuration cache.
         // If enabled, the merged configuration will be cached and used in
         // subsequent requests.
-        //'config_cache_enabled' => $booleanValue,
+        'config_cache_enabled' => false, //$booleanValue,
 
         // The key used to create the configuration cache file name.
         //'config_cache_key' => $stringKey,

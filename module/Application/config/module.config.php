@@ -15,9 +15,39 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
-//                        'controller' => 'Album/Controller/Album',
+//                        'controller' => 'Application\Controller\Index',
+                        'controller' => 'SanAuth/Controller/Auth',
+                        'action'     => 'login',
+//                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            
+            
+            'blog' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route'    => '/blog',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller',
+                        'controller' => 'Blog',
                         'action'     => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    => '/[:controller[/:action][/:id]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
                     ),
                 ),
             ),
@@ -74,7 +104,9 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Blog' => 'Application\Controller\BlogController',
+            'SanAuth/Controller/Auth' => 'SanAuth/Controller/AuthController'
         ),
     ),
     'view_manager' => array(
