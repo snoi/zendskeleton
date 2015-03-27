@@ -16,7 +16,7 @@ return array(
                     'route'    => '/',
                     'defaults' => array(
 //                        'controller' => 'Application\Controller\Index',
-                        'controller' => 'SanAuth/Controller/Auth',
+                        'controller' => 'Auth/Controller/Auth',
                         'action'     => 'login',
 //                        'action'     => 'index',
                     ),
@@ -106,7 +106,7 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController',
             'Application\Controller\Blog' => 'Application\Controller\BlogController',
-            'SanAuth/Controller/Auth' => 'SanAuth/Controller/AuthController'
+//            'Auth/Controller/Auth' => 'Auth/Controller/AuthController',
         ),
     ),
     'view_manager' => array(

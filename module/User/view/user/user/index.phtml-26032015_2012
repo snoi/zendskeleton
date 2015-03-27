@@ -1,0 +1,37 @@
+<script>
+var d = new Date();
+console.log('now = ' + d);
+d.setDate(d.getDate() - 1);
+console.log('yesterday = ' + d);
+var m = new Date();
+m.setMonth(m.getMonth() - 3);
+console.log('-3 month = ' + m)
+var s = new Date();
+s.setFullYear(s.getFullYear() - 5);
+console.log('-5 year = ' + s);
+</script>
+<?php if(!empty($this->users3)) : ?>
+    <?php foreach ($this->users3 as $row) : ?>
+        <?=$row->user_name . PHP_EOL?>
+    <?php endforeach; ?>
+<?php endif; ?>
+<br />
+---
+<br />
+
+<?php if(!empty($this->users2)) : ?>
+    <?php foreach ($this->users2 as $row) : ?>
+        <?=$row->user_name . PHP_EOL?>
+    <?php endforeach; ?>
+<?php endif; ?>
+
+    Page index user.<br />
+
+<?php if(!empty($this->users)) : ?>
+    <?php foreach ($this->users as $row) : ?>
+        <?=$row->user_name . PHP_EOL?>
+    <?php endforeach; ?>
+<?php else : ?>
+    No Data
+<?php endif; ?>
+

@@ -1,0 +1,10 @@
+Page index role.<br />
+
+<?php if(!empty($this->roles)) : ?>
+    <?php foreach ($this->roles as $row) : ?>
+        <?=$row->name . PHP_EOL?>
+    <?php endforeach; ?>
+<?php else : ?>
+    No Data
+<?php endif; ?>
+
